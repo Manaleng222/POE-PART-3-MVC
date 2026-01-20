@@ -68,6 +68,33 @@ Update the connection string in `appsettings.json`:
 "ConnectionStrings": {
   "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=mecca17;Trusted_Connection=True;TrustServerCertificate=True;"
 }
+```
+## Usage
+
+### Lecturer Workflow
+
+- Register or log in
+- Submit a claim with hours worked, rate, and description
+- Upload supporting documents
+- Track claim status
+
+### Program Coordinator Workflow
+
+- Log in as a coordinator
+- View all submitted claims
+- Approve or reject claims with feedback
+- Claim status updates automatically in the database
+
+---
+
+## Author
+Tshepiso Tshediso Manaleng.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
 
 
 
