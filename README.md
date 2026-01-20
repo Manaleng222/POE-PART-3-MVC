@@ -47,3 +47,26 @@ CREATE TABLE LecturerClaims (
 
 SELECT * FROM LecturerClaims;
 
+
+## Technologies Used
+
+- **Framework:** ASP.NET Core MVC  
+- **Language:** C#  
+- **Database:** SQL Server  
+- **Frontend:** Razor Pages, HTML, CSS, Bootstrap  
+- **File Storage:** Local storage for uploaded documents
+
+---
+
+## Configuration
+
+### Database Connection
+
+Update the connection string in `appsettings.json`:
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=mecca17;Trusted_Connection=True;TrustServerCertificate=True;"
+}
+
+
