@@ -1,123 +1,49 @@
-# mecca17
-Lecturer Claims Management System
+# mecca17  
+## Lecturer Claims Management System
 
-Project Description
+## Project Description
 
--The Lecturer Claims Management System is a .NET Core MVC web application that allows lecturers to submit claims for approval and enables program coordinators and managers to review and process them. 
+The **Lecturer Claims Management System** is an ASP.NET Core MVC web application designed to manage lecturer claims efficiently.  
+Lecturers can submit claims for hours worked, while program coordinators and managers can review, approve, or reject those claims.
 
--It includes features such as claim submission, document uploads, claim status tracking, and feedback management.
+The system supports document uploads, claim status tracking, and feedback management using a SQL Server database.
 
-Features
+---
 
+## Features
 
+### Lecturer Features
+- Submit claims for hours worked
+- Upload supporting documents (PDFs, images, etc.)
+- View claim status (Pending, Approved, Rejected)
 
-Lecturer Features:
+### Coordinator / Manager Features
+- View all submitted claims
+- Approve or reject claims with feedback
+- Update claim status in real time
 
--Submit claims for hours worked.
+---
 
--Upload supporting documents (e.g., PDFs).
+## Database
 
--View claim statuses (Pending, Approved, Rejected).
+The system uses a **LecturerClaims** table to store claim information, documents, and statuses.
 
--Coordinator/Manager Features:
+### Table Schema: `LecturerClaims`
 
--Review submitted claims.
+```sql
+CREATE TABLE LecturerClaims (
+    id INT NOT NULL IDENTITY(1,1),
+    username VARCHAR(200),
+    email VARCHAR(255) NULL,
+    module VARCHAR(200),
+    rate VARCHAR(200),
+    hours_worked VARCHAR(200),
+    description VARCHAR(500),
+    total VARCHAR(200),
+    filename VARCHAR(200),
+    filepath VARCHAR(500),
+    status VARCHAR(200)
+);
 
--Approve or reject claims with feedback.
+SELECT * FROM LecturerClaims;
 
--Update claim statuses in real-time.
-
-Database:
-
--Store claims, documents, and feedback.
-
--Use of LecturerClaim table for claim management.
-
-
-Table Schema (LecturerClaims)
-
- create table LecturerClaims(
- 
- id int not null identity(1,1),
- 
- username varchar(200) ,
- 
-email VARCHAR(255)  NULL,
-
- module  varchar(200),
- 
- rate  varchar(200),
- 
- hours_worked  varchar(200),
- 
- description  varchar(500),
- 
- total  varchar(200),
- 
- filename  varchar(200),
- 
- filepath  varchar(500),
- 
- status  varchar(200)
- )
-
- 
-
- select * from LecturerClaims;
-
- 
-
-
- Technologies Used
- 
--Framework: ASP.NET Core MVC
-
--Language: C#
-
--Database: SQL Server
-
--Frontend: Razor Pages, HTML, CSS, Bootstrap
-
--File Storage: Local storage for uploaded documents
-
-
-Configure Database Connection:
-
-Update the connectionString in the appsettings.json file with your database details:
-json
-Copy code
-"ConnectionStrings": {
-    "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=mecca17;Trusted_Connection=True;TrustServerCertificate=True;"
-}
-
-
-
-Usage
-
-Lecturer Workflow:
-
--Log in or register.
-
--Submit claims with hours worked, rate, and description.
-
--Attach supporting documents.
-
--Track claim status.
-
-Program Coordinator Workflow:
-
--Log in as a coordinator.
-
--View all submitted claims.
-
--Approve or reject claims with feedback.
-
--Claim status updates automatically in the database.
-
-
-Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
